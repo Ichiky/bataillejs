@@ -1,3 +1,6 @@
+let jeu = [];
+let joueurA =[];
+let joueurB =[];
 
 function creeJeu( jeu , nbrJocker )
 {
@@ -38,3 +41,22 @@ function melangeJeu( jeu , nbr )
     }
 }
 
+function coupeJeu( jeu )
+{
+    //debugger;
+    let confirmCoupe;
+    let posCoupe;
+    let move;
+    confirmCoupe = confirm("Voulez vous vraiment couper le jeu ?");
+    if (confirmCoupe)
+    {
+        posCoupe = Math.floor((Math.random() * (-jeu.length)));
+        move = jeu.splice(posCoupe);
+        for(let compteur = move.length-1; compteur>=0;compteur--)
+        {
+            jeu.unshift(move[compteur]);
+        }
+       
+    }
+   // return jeu;
+}
