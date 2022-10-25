@@ -13,7 +13,7 @@ function creeJeu( jeu , nbrJocker )
     }
     let couleurs = ["Trèfles","Pique","Coeur","Carreau"];
     let comptCouleurs =0;
-    let valeurs =[1,2,3,4,5,6,7,8,9,10,"Vallet","Dame","Roi"];
+    let valeurs =[1,2,3,4,5,6,7,8,9,10,"Vallet","dame","roi"];
     let comptValeurs = 0;
     for(let compteur = 0; compteur < 52 ;compteur++)
     {
@@ -78,5 +78,37 @@ function distribueJeu( jeu , joueurA , joueurB , nbr)
         {
         joueurB.push(jeu.splice(-1));
         }
+    }
+}
+
+function joueBataille( joueurA, joueurB )
+{
+    debugger;
+    let carteA;
+    let carteB;
+    let maxCartes;
+    let pointA = 0;
+    let pointB = 0;
+
+    if (joueurA.length<=joueurB.length)
+    {
+        maxCartes=joueurA.length;
+    }
+    else{maxCartes=joueurB;}
+
+    for (let compteur = 0; compteur<maxCartes;compteur++)
+    {
+        console.log("Joueur A : "+joueurA[compteur]);
+        console.log("Joueur B : "+joueurB[compteur]);
+        if (joueurA[compteur][0]>joueurB[compteur][0])
+        {
+            console.log("Joueur A remporte un point !");
+            pointA++;
+        }
+        else if (joueurA[compteur][0]<joueurB[compteur][0])
+        {
+            console.log("Joueur B remporte un point !");
+            pointB++;
+       }
     }
 }
