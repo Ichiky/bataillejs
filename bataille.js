@@ -41,7 +41,7 @@ function melangeJeu( jeu , nbr )
 		location2 = Math.floor((Math.random() * jeu.length));
 		tmp = jeu [location1];
 
-		jeu[location1] = deck[location2];
+		jeu[location1] = jeu[location2];
 		jeu[location2] = tmp;
     }
 }
@@ -70,7 +70,13 @@ function distribueJeu( jeu , joueurA , joueurB , nbr)
 {
     for (let compteur = 0; compteur<52; compteur+=nbr)
     {
-        joueurA.push(jeu.splice(-nbr));
-        joueurB.push(jeu.splice(-nbr));
+        for (let compt = 0; compt<nbr;compt+=nbr*2)
+        {
+        joueurB.push(jeu.splice(-1));
+        }
+        for (let compt = 0; compt<nbr;compt+=nbr)
+        {
+        joueurB.push(jeu.splice(-1));
+        }
     }
 }
