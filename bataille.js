@@ -83,7 +83,6 @@ function distribueJeu( jeu , joueurA , joueurB , nbr)
 
 function joueBataille( joueurA, joueurB )
 {
-    debugger;
     let carteA;
     let carteB;
     let maxCartes;
@@ -110,5 +109,17 @@ function joueBataille( joueurA, joueurB )
             console.log("Joueur B remporte un point !");
             pointB++;
        }
+    }
+    if (pointA>pointB)
+    {
+        console.log("Joueur A vainqueur avec "+pointA+" contre "+pointB);
+    }
+    else if (pointA<pointB)
+    {
+        console.log("Joueur B vainqueur avec "+pointB+" contre "+pointA);
+    }
+    else 
+    {
+        console.log("Joueur B et Joueur A vainqueurs avec "+pointA+" et "+pointB);
     }
 }
