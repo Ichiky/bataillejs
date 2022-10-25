@@ -68,11 +68,17 @@ function coupeJeu( jeu )
 
 function distribueJeu( jeu , joueurA , joueurB , nbr)
 {
+    if (joueurA.length !==0 || joueurB.length !==0)
+    {
+        joueurA = [];
+        joueurB = [];
+    }
+    debugger;
     for (let compteur = 0; compteur<52; compteur+=nbr)
     {
         for (let compt = 0; compt<nbr;compt+=nbr*2)
         {
-        joueurB.push(jeu.splice(-1));
+        joueurA.push(jeu.splice(-1));
         }
         for (let compt = 0; compt<nbr;compt+=nbr)
         {
