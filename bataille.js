@@ -1,11 +1,16 @@
 let jeu = [];
 let joueurA =[];
 let joueurB =[];
-
+const JOKER = 3;
+const CARTESDISTRIB = 2;
+const ARRURG = 2000;
 function creeJeu( jeu , nbrJocker )
 {
     //debugger;
-    jeu = [];
+    if (jeu.length!==0)
+    {
+        jeu = [];
+    }
     let couleurs = ["Trèfles","Pique","Coeur","Carreau"];
     let comptCouleurs =0;
     let valeurs =[1,2,3,4,5,6,7,8,9,10,"Vallet","Dame","Roi"];
@@ -59,4 +64,13 @@ function coupeJeu( jeu )
        
     }
    // return jeu;
+}
+
+function distribueJeu( jeu , joueurA , joueurB , nbr)
+{
+    for (let compteur = 0; compteur<52; compteur+=nbr)
+    {
+        joueurA.push(jeu.splice(-nbr));
+        joueurB.push(jeu.splice(-nbr));
+    }
 }
